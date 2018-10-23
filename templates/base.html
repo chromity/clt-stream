@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>clt</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" id="app-navbar">
+        <div>
+            <img src="{% static 'icon.png' %}"
+                    style="height: 48px; padding-left: 15px; margin-top: -36px;"/>
+        </div>
+        <a class="remove-hover-underline" href="{% url 'stream:index' %}">
+        <div id="app-navbar-title">
+            <h2 class="app-navbar-text app-navbar-title">clt</h2>
+            <h3 class="app-navbar-text app-navbar-subtitle">media stream app</h3>
+        </div></a>
+
+        <div class="nav-links">
+            <a class="remove-hover-underline" href="{% url 'stream:movies' %}"><h2>Movies</h2></a>
+            <a class="remove-hover-underline" href="{% url 'stream:index' %}"><h2>Home</h2></a>
+        </div>
+    </div>
+</div>
+<!-- content from templates will be inserted here -->
+<div class="container-fluid">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>
